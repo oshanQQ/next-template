@@ -1,7 +1,8 @@
 import type { NextPage } from "next";
+import HomeTemplate from "~/component/template/Index";
 
 const Home: NextPage = (): JSX.Element => {
-  return <h1>Hello, world!</h1>;
+  return <HomeTemplate />;
 };
 
 export default Home;
