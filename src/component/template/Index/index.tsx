@@ -11,11 +11,13 @@ const HomeTemplate: NextPage = (): JSX.Element => {
   return (
     <Fragment>
       <Header />
-      <Container>
-        <h1>{auth.currentUser ? auth.currentUser.displayName : "ahiahi"}</h1>
-        <button onClick={login}>login</button>
-        <button onClick={logout}>logout</button>
-      </Container>
+      <main>
+        <Container>
+          <h1>{auth.currentUser ? auth.currentUser.displayName : "ahiahi"}</h1>
+          <button onClick={login}>login</button>
+          <button onClick={logout}>logout</button>
+        </Container>
+      </main>
     </Fragment>
   );
 };
