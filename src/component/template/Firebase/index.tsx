@@ -18,6 +18,8 @@ export const FirebaseTemplate = ({
   const { auth, login, logout } = useAuth();
   console.log(auth.currentUser);
 
+  const { getTexts } = useText();
+
   return (
     <Fragment>
       <Header />
@@ -32,6 +34,7 @@ export const FirebaseTemplate = ({
               <button onClick={submit}>add text</button>
             </div>
           )}
+          <button onClick={getTexts}>test</button>
         </Container>
       </main>
     </Fragment>
