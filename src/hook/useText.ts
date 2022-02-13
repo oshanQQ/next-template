@@ -6,17 +6,11 @@ export const useText = () => {
   const addText = async (user: User, text: string) => {
     try {
       console.log("大丈夫そ？");
-      // const docRef = await addDoc(collection(firestore, "texts"), {
-      //   uid: user.uid,
-      //   text: text
-      // });
-      const docRef = await setDoc(doc(firestore, "texts", "primary"), {
+      await addDoc(collection(firestore, "texts"), {
         uid: user.uid,
         text: text
       });
       console.log("OMG");
-
-      console.log(docRef);
     } catch (e) {
       console.error(e);
     }
