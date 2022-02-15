@@ -9,7 +9,7 @@ export interface AuthState {
 }
 
 export const authState = atom<AuthState>({
-  key: "userState",
+  key: "authState",
   default: {
     isLoading: true
   },

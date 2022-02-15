@@ -16,9 +16,6 @@ export const FirebaseTemplate = ({
   submit
 }: FirebaseTemplateProps) => {
   const { auth, login, logout } = useAuth();
-  console.log(auth.currentUser);
-
-  const { getTexts } = useText();
 
   return (
     <Fragment>
@@ -34,7 +31,6 @@ export const FirebaseTemplate = ({
               <button onClick={submit}>add text</button>
             </div>
           )}
-          <button onClick={getTexts}>test</button>
         </Container>
       </main>
     </Fragment>
