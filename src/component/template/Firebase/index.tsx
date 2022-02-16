@@ -1,8 +1,9 @@
 import { ComponentPropsWithRef, Fragment } from "react";
+import { useRecoilValue } from "recoil";
 import { Container } from "~/component/layout/Container";
 import { Header } from "~/component/shared/Header";
 import { useAuth } from "~/hook/useAuth";
-import { useText } from "~/hook/useText";
+import { textsState } from "~/state/text";
 
 export interface FirebaseTemplateProps extends ComponentPropsWithRef<"div"> {
   text: string;
@@ -16,6 +17,7 @@ export const FirebaseTemplate = ({
   submit
 }: FirebaseTemplateProps) => {
   const { auth, login, logout } = useAuth();
+  const texts = useRecoilValue(textsState).texts;
 
   return (
     <Fragment>
@@ -31,6 +33,8 @@ export const FirebaseTemplate = ({
               <button onClick={submit}>add text</button>
             </div>
           )}
+          {auth.currentUser &&
+            texts.map((content, i) => <p key={i}>{content.text}</p>)}
         </Container>
       </main>
     </Fragment>
