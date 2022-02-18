@@ -5,7 +5,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "chmod +x .githooks/pre-commit && git config --local core.hooksPath .githooks"
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",
