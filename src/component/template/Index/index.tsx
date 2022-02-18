@@ -7,7 +7,6 @@ const HomeTemplate: NextPage = (): JSX.Element => {
     <Fragment>
       <Header />
       <h1>Hello, world!</h1>
-      <p>test</p>
     </Fragment>
   );
 };
