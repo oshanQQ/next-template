@@ -10,19 +10,19 @@ const db = firestore(app);
 // Start writing Firebase Functions
 // https://firebase.google.com/docs/functions/typescript
 
-// export const helloWorld = https.onRequest((request, response) => {
-//   logger.info("Hello logs!", { structuredData: true });
-//   response.send("Hello from Firebase!");
-// });
+export const helloWorld = https.onRequest((request, response) => {
+  logger.info("Hello logs!", { structuredData: true });
+  response.send("Hello from Firebase!");
+});
 
-// export const getTexts = https.onRequest(async (request, response) => {
-//   const texts: Text[] = [];
-//   const res = await db.collection("texts").get();
-//   res.forEach((doc) => {
-//     texts.push(doc.data() as Text);
-//   });
-//   response.send(texts);
-// });
+export const getTexts = https.onRequest(async (request, response) => {
+  const texts: Text[] = [];
+  const res = await db.collection("texts").get();
+  res.forEach((doc) => {
+    texts.push(doc.data() as Text);
+  });
+  response.send(texts);
+});
 
 export const scheduledTest = pubsub
   .schedule("every 3 minutes")
