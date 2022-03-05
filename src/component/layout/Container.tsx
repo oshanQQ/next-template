@@ -1,6 +1,10 @@
 import { css } from "@emotion/react";
 import { ComponentPropsWithRef, ForwardedRef } from "react";
 
+// ComponentPropsWithRef<"div">: 一番外側の要素になる。
+//   childrenとかいろいろデフォルトで使えるようになる。
+// forwardRef: Next.jsのアニメーションで使うらしい.
+// HTMLDivElement: divに関するやつ
 export interface ContainerProps extends ComponentPropsWithRef<"div"> {
   forwardRef?: ForwardedRef<HTMLDivElement>;
 }
@@ -18,6 +22,8 @@ export const Container = ({
   ...props
 }: ContainerProps): JSX.Element => {
   return (
+    // <div ref={forwardRef} css={container} {...props}>: 一番外側にこういうやつを書く。
+    // ...propsは、HTMLのdiv要素が受け取れる200くらいの引数を受け取れる。
     <div ref={forwardRef} css={container} {...props}>
       {children}
     </div>
